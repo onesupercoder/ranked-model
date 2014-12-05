@@ -332,6 +332,8 @@ module RankedModel
 
       def apply_collision_policy
         case ranker.collision_policy
+        when Proc
+          ranker.collision_policy.call(self)
         when :rebalance
           rebalance_ranks
         when :rearrange
