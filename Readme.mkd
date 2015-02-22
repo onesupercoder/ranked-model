@@ -1,4 +1,4 @@
-**ranked-model** is a modern row sorting library built for Rails 3 & 4.  It uses ARel aggressively and is better optimized than most other libraries.
+**ranked-model** is a modern row sorting library built for Rails 3 & 4.  It uses ARel aggressively and is better optimized than most other libraries.  Added Collison Policy from csaura.
 
 [![Build Status](https://travis-ci.org/mixonic/ranked-model.png)](https://travis-ci.org/mixonic/ranked-model)
 
@@ -12,11 +12,7 @@ TL;DR, if you are using Rails 4 and up you are 100% good to go. Before Rails 4, 
 To install ranked-model, just add it to your `Gemfile`:
 
 ``` ruby
-gem 'ranked-model'
-
-# Or pin ranked-model to git
-# gem 'ranked-model',
-#   :git => 'git@github.com:mixonic/ranked-model.git'
+gem 'ranked-model', github: 'Dealermade/ranked-model'
 ```
 
 Then use `bundle install` to update your `Gemfile.lock`.
@@ -37,7 +33,7 @@ Put your ducks in a row:
 class Duck < ActiveRecord::Base
 
   include RankedModel
-  ranks :row_order
+  ranks :row_order, collision_policy: :rebalance
 
 end
 ```
