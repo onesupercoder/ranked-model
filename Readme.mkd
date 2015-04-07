@@ -12,7 +12,7 @@ TL;DR, if you are using Rails 4 and up you are 100% good to go. Before Rails 4, 
 To install ranked-model, just add it to your `Gemfile`:
 
 ``` ruby
-gem 'ranked-model', github: 'Dealermade/ranked-model'
+gem 'ranked-model', github: 'onesupercoder/ranked-model'
 ```
 
 Then use `bundle install` to update your `Gemfile.lock`.
